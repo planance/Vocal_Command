@@ -1,6 +1,6 @@
-# Vocal_Command
-<h1 style="color:red;">Test_Tile</h1>
-Vocal_Command est un script en Python qui vous permet de commander votre ordinateur avec votre voix.
+<h1>Vocal_Command</h1>
+<br>
+<p>Vocal_Command est un script en Python qui vous permet de commander votre ordinateur avec votre voix.</p>
 
 
 Avant toutes choses il faut que vous instaliez des plugins:
