@@ -16,4 +16,3 @@ Executez l'exemple main.py (vous pouvez le modifier pour choisir votre language,
 Dites "Olga" et attendez la réponse, puis dites "ouvre Youtube".
 
 Modifiez le script comme bon vous semble et en fonction de ce que vous avez besoin de faire.
-Vocal_Command
