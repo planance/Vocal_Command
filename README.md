@@ -21,12 +21,12 @@
 
 <p>
   
-      elif r.recognize_google(audio, language="fr-FR") == "ouvre Facebook":
-        print("[Ouverture de Facebook demandée]")
-        engine = pyttsx3.init()
-        engine.say("D'accord")
-        engine.runAndWait()
-        webbrowser.open('http://facebook.com')
+      elif r.recognize_google(audio, language="fr-FR") == "ouvre Facebook": # TEXT TO RECOGNIZE ---
+        print("[Ouverture de Facebook demandée]") # DEV CONSOLE TEXT ---
+        engine = pyttsx3.init() # DON'T CHANGE IT!! ---
+        engine.say("D'accord") # AI SPEAKING TEXT ---
+        engine.runAndWait() # DON'T CHANGE IT!! ---
+        webbrowser.open('http://facebook.com') # COMMAND TO EXECUTE ---
     
         detect()
 </p>
