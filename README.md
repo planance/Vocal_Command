@@ -16,3 +16,17 @@
 <p>Dites <b>"Olga"</b> et attendez la réponse, puis dites <b>"ouvre Youtube"</b>.</p>
 <br>
 <p>Modifiez le script comme bon vous semble et en fonction de ce que vous avez besoin de faire.</p>
+<br>
+<p>Par exemple, ajoutez ceci dans le script sous 'def main(): try':</p>
+
+<p>
+  
+      elif r.recognize_google(audio, language="fr-FR") == "ouvre Facebook":
+        print("[Ouverture de Facebook demandée]")
+        engine = pyttsx3.init()
+        engine.say("D'accord")
+        engine.runAndWait()
+        webbrowser.open('http://facebook.com')
+    
+        detect()
+</p>
