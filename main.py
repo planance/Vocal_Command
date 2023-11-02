@@ -5,7 +5,8 @@ from playsound import playsound
 
 # DATAS THAT CAN BE CHANGED -
 ai_name = "Olga"
-# DATAS THAT CAN BE CHANGED (end)-
+master_name = "Djimi" # your name [ex: Jimmy = Djimi (in fr_FR language sound)]
+# DATAS THAT CAN BE CHANGED -end-
 
 def detect():
  r = sr.Recognizer()
@@ -16,7 +17,7 @@ def detect():
  try:
     if r.recognize_google(audio, language="fr-FR") == ai_name:
       engine = pyttsx3.init()
-      engine.say("Oui ? Je vous écoute...")
+      engine.say("Oui ? Je vous écoute, " + master_name + "...")
       print(ai_name + ": Oui ?")
       engine.runAndWait()
       main()
@@ -32,26 +33,48 @@ def detect():
 def main():
  r = sr.Recognizer()
  with sr.Microphone() as source:
-    print(ai_name + ": Je vous écoute...")
+    print(ai_name + ": Je vous écoute, " + master_name + "...")
     audio = r.listen(source)
 
  try:
-    if r.recognize_google(audio, language="fr-FR") == "ouvre YouTube":
+    if r.recognize_google(audio, language="fr-FR") == "fermeture": #CLOSE_THIS_APP
+      print("[Fermeture de l'application demandée]")
+      engine = pyttsx3.init()
+      engine.say("Aurevoir, à bientôt " + master_name + " !")
+      print(ai_name + ": Aurevoir, à bientôt " + master_name + " !")
+      engine.runAndWait()
+
+      exit()
+    elif r.recognize_google(audio, language="fr-FR") == "éteins-toi": #CLOSE_THIS_APP
+      print("[Fermeture de l'application demandée]")
+      engine = pyttsx3.init()
+      engine.say("Aurevoir, à bientôt " + master_name + " !")
+      print(ai_name + ": Aurevoir, à bientôt " + master_name + " !")
+      engine.runAndWait()
+
+      exit()
+
+
+ # DATAS THAT CAN BE CHANGED -     
+    elif r.recognize_google(audio, language="fr-FR") == "ouvre YouTube":
       print("[Ouverture de Youtube demandée]")
       engine = pyttsx3.init()
       engine.say("D'accord")
       engine.runAndWait()
-      webbrowser.open('http://youtube.com')
+      webbrowser.open('http://youtube.com') #COMMAND TO EXECUTE ---
     
       detect()
-    elif r.recognize_google(audio, language="fr-FR") == "éteins-toi": #CLOSE_THIS_APP
-      print("[Fermeture de l'application demandée]")
+    elif r.recognize_google(audio, language="fr-FR") == "ouvre Facebook":
+      print("[Ouverture de Facebook demandée]")
       engine = pyttsx3.init()
-      engine.say("Aurevoir, à bientôt !")
-      print(ai_name + ": Aurevoir, à bientôt !")
+      engine.say("D'accord")
       engine.runAndWait()
+      webbrowser.open('http://facebook.com') #COMMAND TO EXECUTE ---
+    
+      detect()
+# DATAS THAT CAN BE CHANGED -end-
 
-      exit()
+
     else:
       engine = pyttsx3.init() #NO_RULES | FREE MESSAGE
       engine.say("Vous avez dit: " + r.recognize_google(audio, language="fr-FR"))
